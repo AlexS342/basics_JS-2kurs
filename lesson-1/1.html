@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Homework</title>
 </head>
+
 <body>
-<!--
+  <!--
 Обязательное задание.
 
 Необходимо пользователя попросить ввести температуру в градусах Цельсия,
@@ -19,10 +21,16 @@
 
 Уточнение: пользователь всегда вводит корректное число.
 -->
-<script>
-  "use strict";
+  <script>
+    "use strict";
 
-  // Здесь пишем решение, данный комментарий необходимо стереть.
-</script>
+    // Здесь пишем решение, данный комментарий необходимо стереть.
+
+    let temperatureCelsius = Number(prompt('Введите температуру по цельсию: '));
+    let temperatureFahrenheit = null;
+    temperatureFahrenheit = (9 / 5) * temperatureCelsius + 32;
+    alert(`Цельсий: = ${temperatureCelsius.toFixed(2)}, Фаренгейе: ${temperatureFahrenheit.toFixed(2)}`)
+  </script>
 </body>
+
 </html>
