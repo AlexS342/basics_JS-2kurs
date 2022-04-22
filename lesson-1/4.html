@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Homework</title>
+  <title>Homework - hundred, ten, units</title>
 </head>
 
 <body>
@@ -30,11 +30,11 @@
   <script>
     "use strict";
 
-    let variable = parseInt(prompt('Введите число: '));
-    let hundred = parseInt((variable % 1000) / 100);
-    let ten = parseInt((variable % 100) / 10);
-    let units = parseInt(variable % 10);
-    console.log(`В числе ${variable} количество сотен: ${hundred}, десятков: ${ten}, единиц: ${units}`);
+    const userNumber = Math.trunc(prompt('Введите число: '));
+    const hundred = Math.trunc((userNumber % 1000) / 100);
+    const ten = Math.trunc((userNumber % 100) / 10);
+    const units = Math.trunc(userNumber % 10);
+    console.log(`В числе ${userNumber} количество сотен: ${hundred}, десятков: ${ten}, единиц: ${units}`);
   </script>
 </body>
 
