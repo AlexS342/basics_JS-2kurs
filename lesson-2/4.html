@@ -42,11 +42,22 @@
     console.log(performMultiplication(firstNumber, secondNumber));
     console.log(performDivision(firstNumber, secondNumber));
 
-
+    /**
+     * Функция складывает два переданных числа
+     * @param {number} x первое получаемое число
+     * @param {number} y второе получаемое число
+     * @returns {number} возврощает результат сложения x и y
+     */
     function performAddition(x, y) { //сложение
       return x + y;
     }
 
+    /**
+     * Функция определяет, какое число больше и вычитает из большего меньшее
+     * @param {number} x первое получаемое число
+     * @param {number} y второе получаемое число
+     * @returns {number} возврощает разность между большим и меньшим числами
+     */
     function performSubtraction(x, y) {  //вычетание
       if (x > y) {
         return x - y;
@@ -58,10 +69,22 @@
 
     }
 
+    /**
+     * Функция умножает два переданных числа
+     * @param {number} x первое получаемое число
+     * @param {number} y второе получаемое число
+     * @returns {number} возврощает результат умножения x и y
+     */
     function performMultiplication(x, y) { //умножение
       return x * y;
     }
 
+    /**
+     * Функция делит первое число на второе
+     * @param {number} x первое получаемое число
+     * @param {number} y второе получаемое число
+     * @returns {number} возврощает результат деления  x на y
+     */
     function performDivision(x, y) { //деление
       return x / y;
     }
