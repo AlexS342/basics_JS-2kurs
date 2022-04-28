@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <title>Homework</title>
+  <title>Homework-6</title>
 </head>
+
 <body>
-<!--
+  <!--
 Необязательное задание.
 
-Необходимо реализовать функцию, которая будет принимать первым аргументом
++Необходимо реализовать функцию, которая будет принимать первым аргументом
 целое положительное число, в следующих трех аргументах функция принимает слова
 в разных склонениях.
-Функция должна возвращать одно из трех переданных в параметры слов подходящее
++Функция должна возвращать одно из трех переданных в параметры слов подходящее
 под число, которое передано первым аргументом.
 
 Пример:
@@ -22,25 +24,54 @@ console.log(declinationOfNumber(5, "стул", "стула", "стульев"));
 Функция должна работать с любым словом и любым целым положительным числом.
 Все аргументы, которые будут передаваться функции будут верны.
 -->
-<script>
-  "use strict";
+  <script>
+    "use strict";
 
-  function declinationOfNumber(count, one, two, five) {
+    const count = Number.parseInt(prompt("Введите число:"));
+    const one = prompt("Введите существительное для 1:");
+    const two = prompt("Введите существительное для 2:");
+    const five = prompt("Введите существительное для 5:");
 
-  }
+    const noun = declinationOfNumber(count, one, two, five);
+
+    console.log(`У меня есть ${count} ${noun}.`)
+
+    /**
+     * Функция принимает целое число и три слова, в зависимости от числа 
+     * возвращает слово с правильным окончанием
+     * @param {number} count - целое число 
+     * @param {string} one - Существительное для 1
+     * @param {string} two - Существительное для 2
+     * @param {string} five - Существительное для 5
+     * @returne {string} одно из трех слов взависимости от числа
+     */
+    function declinationOfNumber(count, one, two, five) {
+      const x = Math.trunc((Math.abs(count) % 100) / 10);
+      const y = count % 10;
+      if (y === 1 && x !== 1) {
+        return one; //яблоко
+      } else if (y > 1 && y < 5 && x !== 1) {
+        return two; //яблока
+      } else if (y === 0 || y >= 5 && y <= 9 || x === 1) {
+        return five; //яблок
+      } else {
+        return NaN;
+      }
+    }
 
   // Число яблок, можно пробовать поставить свое целое, положительное число.
-  const applesNumber = 5;
+  // const applesNumber = 5;
   // Получаем от функции одно из слов "яблоко", "яблока" или "яблок".
-  const word = declinationOfNumber(applesNumber, "яблоко", "яблока", "яблок");
+  // const word = declinationOfNumber(appleNumber, "яблоко", "яблока", "яблок");
   // Выводим корректную строку, например:
   // "У меня есть 1 яблоко."
   // "У меня есть 2 яблока."
   // "У меня есть 5 яблок."
   // При любом целом, положительном числе в applesNumber, строка, которая
   // выводится в console.log, должна иметь правильное склонение слова "яблоко".
-  console.log(`У меня есть ${applesNumber} ${word}.`);
+  // console.log(`У меня есть ${applesNumber} ${word}.`);
 
-</script>
+  </script>
 </body>
+
 </html>
