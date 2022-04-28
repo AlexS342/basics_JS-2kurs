@@ -44,25 +44,22 @@ Infinity делать не нужно, однако, в случае если б
     /**
      * Функция получает два числа и математический символ, путем вызова матема-
      * тической функции, выполняет математические действия, возвращает результат
-     * @raram {number} x первое получаемое число
+     * @param {number} x первое получаемое число
      * @param {number} y второе получаемое число
      * @param {string} s математическое действие ("+", "-", "*", или "/")
      * @returns {number} возвращаемое значение x+y, x-y, y-x, x*y, x/y или NaN
      */
     function mathOperation(x, y, s) {
-      if (s === "+" || s === "-" || s === "*" || s === "/") {
-        if (s === "+") {
-          console.log(performAddition(x, y));
-        } else if (s === "-") {
-          console.log(performSubtraction(x, y));
-        } else if (s === "*") {
-          console.log(performMultiplication(x, y));
-        } else {
-          console.log(performDivision(x, y));
-        }
-      } else {
-        alert(NaN);
+      if (s === "+") {
+        console.log(performAddition(x, y));
+      } else if (s === "-") {
+        console.log(performSubtraction(x, y));
+      } else if (s === "*") {
+        console.log(performMultiplication(x, y));
+      } else if (s === "/") {
+        console.log(performDivision(x, y));
       }
+      console.log(NaN);
     }
 
     /**
