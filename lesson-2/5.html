@@ -1,38 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <title>Homework</title>
+  <title>Homework-5</title>
 </head>
+
 <body>
-<!--
+  <!--
 Обязательное задание.
 
-Необходимо скопировать и вставить в данный скрипт все функции из 4 задания.
-Необходимо реализовать функцию:
-mathOperation(arg1, arg2, operation);
-Параметры:
-arg1 - первое число.
-arg2 - второе число.
-operation - строка, которая содержит один символ из: "+", "-", "*", "/".
-Функция mathOperation должна вернуть результат операции, который был передан в
++Необходимо скопировать и вставить в данный скрипт все функции из 4 задания.
++Необходимо реализовать функцию:
++mathOperation(arg1, arg2, operation);
++Параметры:
++arg1 - первое число.
++arg2 - второе число.
++operation - строка, которая содержит один символ из: "+", "-", "*", "/".
++Функция mathOperation должна вернуть результат операции, который был передан в
 параметр operation для двух первых аргументов (arg1 и arg2).
-Функция mathOperation должна использовать для вычисления функции из 4 задания.
++Функция mathOperation должна использовать для вычисления функции из 4 задания.
 
 Примеры вызова функции:
 console.log(mathOperation(5, 3, "+")); // 8
 console.log(mathOperation(5, 3, ":)")); // NaN
 
-Функции mathOperation всегда передаются корректные числа, проверки на NaN,
++Функции mathOperation всегда передаются корректные числа, проверки на NaN,
 Infinity делать не нужно, однако, в случае если был передан некорректный
 аргумент в параметр operation, необходимо вернуть NaN.
 
-Необходимо для всех функций прописать комментарии jsdoc https://jsdoc.app/.
++Необходимо для всех функций прописать комментарии jsdoc https://jsdoc.app/.
 -->
-<script>
-  "use strict";
+  <script>
+    "use strict";
 
-  // Здесь пишем решение, данный комментарий необходимо стереть.
-</script>
+    // Здесь пишем решение, данный комментарий необходимо стереть.
+    const arg1 = Number.parseFloat(prompt('Enter the first number:'));
+    const arg2 = Number.parseFloat(prompt('Enter the second number:'));
+    const action = prompt('Enter the action ("+", "-", "*" or "/"):');
+
+    mathOperation(arg1, arg2, action);
+
+    /**
+     * Функция получает два числа и математический символ, путем вызова матема-
+     * тической функции, выполняет математические действия, возвращает результат
+     * @param {number} x первое получаемое число
+     * @param {number} y второе получаемое число
+     * @param {string} s математическое действие ("+", "-", "*", или "/")
+     * @returns {number} возвращаемое значение x+y, x-y, y-x, x*y, x/y или NaN
+     */
+    function mathOperation(x, y, s) {
+      if (s === "+") {
+        console.log(performAddition(x, y));
+      } else if (s === "-") {
+        console.log(performSubtraction(x, y));
+      } else if (s === "*") {
+        console.log(performMultiplication(x, y));
+      } else if (s === "/") {
+        console.log(performDivision(x, y));
+      }
+      console.log(NaN);
+    }
+
+    /**
+     * Функция складывает два переданных числа
+     * @param {number} x первое получаемое число
+     * @param {number} y второе получаемое число
+     * @returns {number} возврощает результат сложения x и y
+     */
+    function performAddition(x, y) {
+      return x + y;
+    }
+
+    /**
+     * Функция определяет, какое число больше и вычитает из большего меньшее
+     * @param {number} x первое получаемое число
+     * @param {number} y второе получаемое число
+     * @returns {number} возврощает разность между большим и меньшим числами
+     */
+    function performSubtraction(x, y) {
+      if (x > y) {
+        return x - y;
+      } else if (y > x) {
+        return y - x;
+      } else {
+        return 0;
+      }
+    }
+
+    /**
+     * Функция умножает два переданных числа
+     * @param {number} x первое получаемое число
+     * @param {number} y второе получаемое число
+     * @returns {number} возврощает результат умножения x и y
+     */
+    function performMultiplication(x, y) {
+      return x * y;
+    }
+
+    /**
+     * Функция делит первое число на второе
+     * @param {number} x первое получаемое число
+     * @param {number} y второе получаемое число
+     * @returns {number} возврощает результат деления  x на y
+     */
+    function performDivision(x, y) {
+      return x / y;
+    }
+  </script>
 </body>
+
 </html>
