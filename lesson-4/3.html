@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Homework</title>
 </head>
+
 <body>
-<!--
+  <!--
 Необязательное задание.
 
 Необходимо создать функцию getDigitsOfNumber, которая принимает целое
@@ -28,10 +30,49 @@
 Обратите внимание на слова "от 0 до 1000", это означает диапазон [0, 999], что
 можно прочитать как "от нуля до 999 включительно".
 -->
-<script>
-  "use strict";
+  <script>
+    "use strict";
 
-  // Здесь пишем решение, данный комментарий необходимо стереть.
-</script>
+    /**
+     * Функция принимает целое число от 0 до 1000 и разбивает его на единици,
+     * десятки и сотни, результат хранит в свойствах объекта.
+     * @param {number} num - принимаемое значение
+     * @returns {objeck} objNum объект с результатом
+     */
+    function getDigitsOfNumber(num) {
+      let number = Number(num);
+      if (Number.isInteger(number) && number >= 0 && number < 999) {
+        const a = Math.trunc(num % 10);
+        const b = Math.trunc((num % 100) / 10);
+        const c = Math.trunc(num / 100);
+        const objNum = new ParsingNum(a, b, c);
+        return objNum;
+      } else {
+        console.error(
+          "В функцию getDigitsOfNumbeer передано недопустимое значение");
+      };
+    }
+
+    /**
+     * Функция-конструктор, соборающая объект из данных получаемых от 
+     * getDigitsOfNumber
+     * @param {number} a - принимаемое значение от getDigitsOfNumber
+     * @param {number} b - принимаемое значение от getDigitsOfNumber
+     * @param {number} c - принимаемое значение от getDigitsOfNumber
+     * @returns {objeck} objNum объект с результатом
+     */
+
+    function ParsingNum(a, b, c) {
+      this.units = a;
+      this.dozens = b;
+      this.hundreds = c;
+    }
+
+    let userNum = prompt("Введиде число от 0 до 1000");
+
+    console.log(getDigitsOfNumber(userNum));
+
+  </script>
 </body>
+
 </html>
