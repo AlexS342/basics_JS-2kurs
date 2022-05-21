@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Homework</title>
 </head>
+
 <body>
-<!--
+  <!--
 Обязательное задание.
 
 Необходимо данное задание выполнить в es5 стиле и в es6 стиле.
@@ -47,10 +49,103 @@
 что-нибудь пропустить.
 4. Если непонятно условие - задайте вопрос.
 -->
-<script>
-  "use strict";
+  <script>
+    "use strict";
 
-  // Здесь пишем решение, данный комментарий необходимо стереть.
-</script>
+    function PostES5(name, text) {
+      this.name = name;
+      this.text = text;
+      this.timestamp = new Date();
+    }
+
+    PostES5.prototype.edit = function (editText) {
+      this.text = editText;
+      this.timestamp = new Date();
+    }
+
+    function AttachedPostES5(name, text) {
+      PostES5.call(this, name, text);
+      this.highlighted = false;
+    };
+
+    AttachedPostES5.prototype = Object.create(PostES5.prototype);
+    AttachedPostES5.prototype.constructor = AttachedPostES5;
+
+    AttachedPostES5.prototype.makeTextHighlighted = function () {
+      this.highlighted = true;
+      this.timestamp = new Date();
+    }
+
+    const post1 = new PostES5(
+      'Ruolan', 'Hello bad people! I wish you to become better.');
+    const post2 = new PostES5('Xiuying', 'The good should be with fists.');
+    console.log(post1);
+    console.log(post2);
+    post1.edit('Hello friends! I wish you happiness.');
+    post2.edit('The good must be mutual.');
+    console.log(post1);
+    console.log(post2);
+
+    const fixedPost1 = new AttachedPostES5(
+      'Dong Sun', 'Because of you, I see the world differently now');
+    console.log(fixedPost1);
+    fixedPost1.edit("Thanks to you, I can't see this world anymore");
+    fixedPost1.makeTextHighlighted();
+    console.log(fixedPost1);
+
+    console.log(' --=-- * --=-- * --=-- * --=-- * --=--  ');
+
+    class PostES6 {
+      constructor(name, text) {
+        this.name = name;
+        this.text = text;
+        this.timestamp = new Date();
+      };
+
+      edit = function (editText) {
+        this.text = editText;
+        this.timestamp = new Date();
+      };
+    };
+
+    class AttachedPostES6 extends PostES6 {
+      highlighted = false;
+
+      makeTextHighlighted = function () {
+        this.highlighted = true;
+        this.timestamp = new Date();
+      }
+    }
+
+    const post3 = new PostES6(
+      'Kuifen',
+      'Walking in the fresh air is more useful than working in a stuffy office.'
+    );
+    const post4 = new PostES6(
+      'Kiyu',
+      "And I don't care about the lantern, I went to drink milk oolong!"
+    );
+    console.log(post3);
+    console.log(post4);
+    post3.edit('Chief! Give me a couple of days off!');
+    post4.edit("I'm tired, I'm going to have a coffee!");
+    console.log(post3);
+    console.log(post4);
+    const fixedPost2 = new AttachedPostES6(
+      'Hwa Young', 'I choose my mood myself. Today will be happiness.');
+    console.log(fixedPost2);
+    fixedPost2.edit("They ruined my mood. Now I'll be angry.");
+    fixedPost2.makeTextHighlighted();
+    console.log(fixedPost1);
+
+    /*
+    Эта тема для меня оказалась очень сложная, и проблемма даже не в том, чтобы
+    понять, а в том, как уложить это в голове и знать, что потом гуглить. 
+    ES5 для меня оказался проще, чем ES6. 
+    Благодаря показаным решениям смог монять чуть больше.
+    */
+
+  </script>
 </body>
+
 </html>
