@@ -1,106 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Homework</title>
 </head>
+
 <body>
-<!--
+  <!--
 Обязательное задание.
 
 Выполнить все задачи в теге script. Комментарии, в которых написаны задачи, не
 стирать, код с решением задачи пишем под комментарием.
 -->
 
-<p class="super_element">Привет</p>
+  <p class="super_element">Привет</p>
+  <!--
+  <img src="https://placeimg.com/50/50/animals" alt="">
+  <img src="https://placeimg.com/50/50/arch" alt="">
+  <img src="https://placeimg.com/50/50/nature" alt="">
+  <img src="https://placeimg.com/50/50/people" alt="">
+  <img src="https://placeimg.com/50/50/tech" alt="">
+  <img src="https://placeimg.com/50/50/tech/grayscale" alt="">
+  <img src="https://placeimg.com/50/50/tech/sepia" alt="">
+  -->
+  <!--Ваши картинки не грузились, вылетали ошибки загрузки, я заменил на свои-->
+  <img
+    src="https://avatars.mds.yandex.net/get-zen_doc/3769362/pub_5fef76f1bb14d54ffb2a5120_5fef771aaf142f0b17efaa93/scale_1200"
+    width="500px" alt="">
+  <img
+    src="https://avatars.mds.yandex.net/get-zen_doc/1602847/pub_5c89f53c43a7b600b05bd3f9_5c89f54ab48e4700af8e4b4c/scale_1200"
+    width="500px" alt="">
+  <img src="https://www.cheltv.ru/wp-content/uploads/2020/02/gluxar6.png" width="500px" alt="">
+  <img
+    src="https://avatars.mds.yandex.net/get-zen_doc/3769362/pub_5fef76f1bb14d54ffb2a5120_5fef771aaf142f0b17efaa93/scale_1200"
+    width="500px" alt="">
+  <img src="https://assets.illyriad.net/filter?url=https://images8.alphacoders.com/367/367443.jpg" width="500px" alt="">
+  <img
+    src="https://avatars.mds.yandex.net/get-zen_doc/1703615/pub_5f8d65c35284e336e5bd98c3_5f8d65eb4ab7c3765a385f34/scale_1200"
+    width="500px" alt="">
+  <img src="https://img-fotki.yandex.ru/get/4802/98861842.5a/0_8e9e7_5998b284_orig" width="500px" alt="">
 
-<img src="https://placeimg.com/50/50/animals" alt="">
-<img src="https://placeimg.com/50/50/arch" alt="">
-<img src="https://placeimg.com/50/50/nature" alt="">
-<img src="https://placeimg.com/50/50/people" alt="">
-<img src="https://placeimg.com/50/50/tech" alt="">
-<img src="https://placeimg.com/50/50/tech/grayscale" alt="">
-<img src="https://placeimg.com/50/50/tech/sepia" alt="">
+  <br>
 
-<br>
+  <button>Кнопка</button>
+  <button class="super_element">Кнопка с классом btn</button>
+  <button>Кнопка</button>
 
-<button>Кнопка</button>
-<button class="super_element">Кнопка с классом btn</button>
-<button>Кнопка</button>
+  <br>
 
-<br>
+  <textarea></textarea>
 
-<textarea></textarea>
+  <br>
 
-<br>
+  <ul>
+    <li>
+      <button>Кнопка 1</button>
+    </li>
+    <li>
+      <button>Кнопка 2</button>
+    </li>
+    <li>
+      <button>Кнопка 3</button>
+    </li>
+    <li>
+      <button>Кнопка 4</button>
+    </li>
+  </ul>
 
-<ul>
-  <li>
-    <button>Кнопка 1</button>
-  </li>
-  <li>
-    <button>Кнопка 2</button>
-  </li>
-  <li>
-    <button>Кнопка 3</button>
-  </li>
-  <li>
-    <button>Кнопка 4</button>
-  </li>
-</ul>
+  <script>
+    "use strict";
 
-<script>
-  "use strict";
-
-  /*
-  1. Необходимо вывести сообщение в консоль "все теги прогрузились", когда все
-  теги будут созданы браузером.
-  */
-
-
-  /*
-  2. Необходимо вывести сообщение в консоль "страница загрузилась", когда все
-  ресурсы страницы будут загружены.
-  */
-
-
-  /*
-  3. При клике на какой-либо тег на странице в консоль должно выводиться
-  сообщение наподобие:
-  Класс "super_element" присутствует в элементе "div".
-  сообщение должно определять присутствует или отсутствует класс "super_element"
-  у элемента, а также выводить в нижнем регистре верный тег в данной строке, по
-  которому был совершен клик.
-  Необходимо использовать делегирование.
-  */
-
-
-  /*
-  4. Сделайте, чтобы при наведении на textarea в консоли появлялось сообщение:
-  "Вы навели на textarea."
-   */
+    /*
+    1. Необходимо вывести сообщение в консоль "все теги прогрузились", когда все
+    теги будут созданы браузером.
+    */
+    document.addEventListener(
+      "DOMContentLoaded", () => {
+        console.log("все теги прогрузились")
+      });
 
 
-  /*
-  5. Необходимо повесить событие клика на тег ul. В обработчике события в
-  консоль необходимо выводить текст, который записан внутри элемента кнопки,
-  по которой был произведен клик.
-  Если клик был не по кнопке, то ничего выводить не нужно.
-  Необходимо использовать делегирование.
-   */
+    /*
+    2. Необходимо вывести сообщение в консоль "страница загрузилась", когда все
+    ресурсы страницы будут загружены.
+    */
+    window.addEventListener(
+      'load', () => { console.log('страница загрузилась') });
+
+    /*
+    3. При клике на какой-либо тег на странице в консоль должно выводиться
+    сообщение наподобие:
+    Класс "super_element" присутствует в элементе "div".
+    сообщение должно определять присутствует или отсутствует класс "super_element"
+    у элемента, а также выводить в нижнем регистре верный тег в данной строке, по
+    которому был совершен клик.
+    Необходимо использовать делегирование.
+    */
+    document.addEventListener('click', event => {
+      let nalichieClassTag = null;
+      if (event.target.classList.contains('super_element')) {
+        nalichieClassTag = "присутствует";
+      } else {
+        nalichieClassTag = "отсутствует";
+      }
+      console.log(`Класс "super_element" ${nalichieClassTag} в элементе "${event.target.nodeName.toLowerCase()}".`);
+    });
+
+    /*
+    4. Сделайте, чтобы при наведении на textarea в консоли появлялось сообщение:
+    "Вы навели на textarea."
+     */
+    //mouseover
+    const tagTextarea = document.querySelector('textarea');
+    tagTextarea.addEventListener('mouseover', () => {
+      console.log("Вы навели на textarea.");
+    });
+
+    /*
+    5. Необходимо повесить событие клика на тег ul. В обработчике события в
+    консоль необходимо выводить текст, который записан внутри элемента кнопки,
+    по которой был произведен клик.
+    Если клик был не по кнопке, то ничего выводить не нужно.
+    Необходимо использовать делегирование.
+     */
 
 
-  /*
-  6. Вопрос: Почему в console.log пишется сначала текст из 5 задания и только
-  потом выводится текст из 3 задания, если мы кликаем по кнопкам в ul?
-  Ответ необходимо написать здесь же, под этим комментарием, своими словами.
-  */
+    /*
+    6. Вопрос: Почему в console.log пишется сначала текст из 5 задания и только
+    потом выводится текст из 3 задания, если мы кликаем по кнопкам в ul?
+    Ответ необходимо написать здесь же, под этим комментарием, своими словами.
+    */
 
 
-  /*
-  7. С помощью JS необходимо изменить цвет заднего фона каждого второго тега li.
-   */
+    /*
+    7. С помощью JS необходимо изменить цвет заднего фона каждого второго тега li.
+     */
 
-</script>
+  </script>
 </body>
+
 </html>
