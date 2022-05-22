@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Homework</title>
 </head>
+
 <body>
-<!--
+  <!--
 Обязательное задание.
 
 Необходимо данное задание выполнить в es5 стиле и в es6 стиле.
@@ -17,10 +19,70 @@
 метод должен уменьшать стоимость продукта на 25%.
 Необходимо продемонстрировать работу с объектом (в свободной форме).
 -->
-<script>
-  "use strict";
+  <script>
+    "use strict";
 
-  // Здесь пишем решение, данный комментарий необходимо стереть.
-</script>
+    //let discountPrice = 0;
+
+    function ProductES5(name, price) {
+      this.name = name;
+      this.price = price;
+    }
+
+    ProductES5.prototype.make25Discount = function () {
+      //discountPrice = this.price / 100 * 75;
+      return this.price / 100 * 75;
+    };
+
+    ProductES5.prototype.sayProduct = function () {
+      this.make25Discount();
+      console.log(`${this.name} по ${this.price} руб/кг`);
+      //console.log(`Но для вас ${discountPrice} руб/кг`);
+      console.log(`Но для вас ${this.make25Discount()} руб/кг`);
+    }
+
+    const product1 = new ProductES5('Арбуз', 156);
+    const product2 = new ProductES5('Персик', 489);
+
+    console.log(product1);
+    console.log(product2);
+
+    product1.sayProduct();
+    product2.sayProduct();
+
+    console.log(`----------`)
+
+    class ProductES6 {
+      constructor(name, price) {
+        this.name = name;
+        this.price = price;
+      };
+
+      make25Discount() {
+        //discountPrice = this.price / 100 * 75;
+        return this.price / 100 * 75;
+      };
+
+      sayProduct() {
+        this.make25Discount();
+        console.log(`${this.name} по ${this.price} руб/кг`);
+        //console.log(`Но для вас ${discountPrice} руб/кг`);
+        console.log(`Но для вас ${this.make25Discount()} руб/кг`);
+      }
+    };
+
+    const product3 = new ProductES6('Утюг', 9450);
+    const product4 = new ProductES6('Холодильник', 78600);
+
+    console.log(product3);
+    console.log(product4);
+
+    product3.sayProduct();
+    product4.sayProduct();
+
+
+
+  </script>
 </body>
+
 </html>
