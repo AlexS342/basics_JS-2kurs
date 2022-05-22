@@ -22,23 +22,19 @@
   <script>
     "use strict";
 
-    //let discountPrice = 0;
-
     function ProductES5(name, price) {
       this.name = name;
       this.price = price;
     }
 
     ProductES5.prototype.make25Discount = function () {
-      //discountPrice = this.price / 100 * 75;
-      return this.price / 100 * 75;
+      this.price = this.price / 100 * 75;
     };
 
     ProductES5.prototype.sayProduct = function () {
+      console.log(`Старая цена на ${this.name} по ${this.price} руб/кг`);
       this.make25Discount();
-      console.log(`${this.name} по ${this.price} руб/кг`);
-      //console.log(`Но для вас ${discountPrice} руб/кг`);
-      console.log(`Но для вас ${this.make25Discount()} руб/кг`);
+      console.log(`Новая цена на ${this.name} по ${this.price} руб/кг`);
     }
 
     const product1 = new ProductES5('Арбуз', 156);
@@ -59,15 +55,13 @@
       };
 
       make25Discount() {
-        //discountPrice = this.price / 100 * 75;
-        return this.price / 100 * 75;
+        this.price = this.price / 100 * 75;
       };
 
       sayProduct() {
+        console.log(`Старая цена на ${this.name} по ${this.price} руб/кг`);
         this.make25Discount();
-        console.log(`${this.name} по ${this.price} руб/кг`);
-        //console.log(`Но для вас ${discountPrice} руб/кг`);
-        console.log(`Но для вас ${this.make25Discount()} руб/кг`);
+        console.log(`Новая цена на ${this.name} по ${this.price} руб/кг`);
       }
     };
 

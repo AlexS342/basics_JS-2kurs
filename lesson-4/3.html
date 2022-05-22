@@ -40,17 +40,16 @@
      * @returns {objeck} objNum объект с результатом
      */
     function getDigitsOfNumber(num) {
-      let number = Number(num);
-      if (Number.isInteger(number) && number >= 0 && number < 999) {
-        const a = Math.trunc(num % 10);
-        const b = Math.trunc((num % 100) / 10);
-        const c = Math.trunc(num / 100);
-        const objNum = new ParsingNum(a, b, c);
-        return objNum;
+      //let number = num;
+      if (Number.isInteger(num) && num >= 0 && num < 999) {
+        const units = Math.trunc(num % 10);
+        const dozens = Math.trunc((num % 100) / 10);
+        const hundreds = Math.trunc(num / 100);
+        return new ParsingNum(units, dozens, hundreds);
       } else {
-        console.error(
-          "В функцию getDigitsOfNumbeer передано недопустимое значение");
-      };
+        console.error("В функцию getDigitsOfNumbeer передано недопустимое значение");
+        return {};
+      }
     }
 
     /**
@@ -61,14 +60,13 @@
      * @param {number} c - принимаемое значение от getDigitsOfNumber
      * @returns {objeck} objNum объект с результатом
      */
-
-    function ParsingNum(a, b, c) {
-      this.units = a;
-      this.dozens = b;
-      this.hundreds = c;
+    function ParsingNum(units, dozens, hundreds) {
+      this.units = units;
+      this.dozens = dozens;
+      this.hundreds = hundreds;
     }
 
-    let userNum = prompt("Введиде число от 0 до 1000");
+    let userNum = +prompt("Введиде число от 0 до 1000");
 
     console.log(getDigitsOfNumber(userNum));
 
