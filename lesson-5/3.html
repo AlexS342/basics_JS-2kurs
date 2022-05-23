@@ -15,7 +15,7 @@
 -->
 
   <p class="super_element">Привет</p>
-  <!--
+
   <img src="https://placeimg.com/50/50/animals" alt="">
   <img src="https://placeimg.com/50/50/arch" alt="">
   <img src="https://placeimg.com/50/50/nature" alt="">
@@ -23,23 +23,6 @@
   <img src="https://placeimg.com/50/50/tech" alt="">
   <img src="https://placeimg.com/50/50/tech/grayscale" alt="">
   <img src="https://placeimg.com/50/50/tech/sepia" alt="">
-  -->
-  <!--Ваши картинки не грузились, вылетали ошибки загрузки, я заменил на свои-->
-  <img
-    src="https://avatars.mds.yandex.net/get-zen_doc/3769362/pub_5fef76f1bb14d54ffb2a5120_5fef771aaf142f0b17efaa93/scale_1200"
-    width="500px" alt="">
-  <img
-    src="https://avatars.mds.yandex.net/get-zen_doc/1602847/pub_5c89f53c43a7b600b05bd3f9_5c89f54ab48e4700af8e4b4c/scale_1200"
-    width="500px" alt="">
-  <img src="https://www.cheltv.ru/wp-content/uploads/2020/02/gluxar6.png" width="500px" alt="">
-  <img
-    src="https://avatars.mds.yandex.net/get-zen_doc/3769362/pub_5fef76f1bb14d54ffb2a5120_5fef771aaf142f0b17efaa93/scale_1200"
-    width="500px" alt="">
-  <img src="https://assets.illyriad.net/filter?url=https://images8.alphacoders.com/367/367443.jpg" width="500px" alt="">
-  <img
-    src="https://avatars.mds.yandex.net/get-zen_doc/1703615/pub_5f8d65c35284e336e5bd98c3_5f8d65eb4ab7c3765a385f34/scale_1200"
-    width="500px" alt="">
-  <img src="https://img-fotki.yandex.ru/get/4802/98861842.5a/0_8e9e7_5998b284_orig" width="500px" alt="">
 
   <br>
 
@@ -77,7 +60,7 @@
     */
     document.addEventListener(
       "DOMContentLoaded", () => {
-        console.log("все теги прогрузились")
+        console.log("все теги прогрузились");
       });
 
 
@@ -86,7 +69,9 @@
     ресурсы страницы будут загружены.
     */
     window.addEventListener(
-      'load', () => { console.log('страница загрузилась') });
+      'load', () => {
+        console.log('страница загрузилась')
+      });
 
     /*
     3. При клике на какой-либо тег на странице в консоль должно выводиться
@@ -124,18 +109,32 @@
     Если клик был не по кнопке, то ничего выводить не нужно.
     Необходимо использовать делегирование.
      */
-
+    const tagUl = document.querySelector('ul');
+    tagUl.addEventListener('click', event => {
+      if ("BUTTON" === event.target.nodeName) {
+        console.log(event.target.innerText);
+      }
+    });
 
     /*
     6. Вопрос: Почему в console.log пишется сначала текст из 5 задания и только
     потом выводится текст из 3 задания, если мы кликаем по кнопкам в ul?
     Ответ необходимо написать здесь же, под этим комментарием, своими словами.
+    Ответ:
+    Предполагаю, что такой порядок вызван тем, что в задании №5 событие повешено 
+    на тег, а в задании №3 событие повешено на document. Не знаю как правильно 
+    объяснить, но понимаю это так,что сначало срабатывает событие на самом 
+    вложенном элементе и дальше по возростающей. И, возможно, это связано с 
+    глубиной prototype.
     */
-
 
     /*
     7. С помощью JS необходимо изменить цвет заднего фона каждого второго тега li.
      */
+    const tagLi = document.querySelectorAll('li:nth-child(odd)');
+    for (let i = 0; i < tagLi.length; i++) {
+      tagLi[i].style.backgroundColor = "green";
+    }
 
   </script>
 </body>
