@@ -42,7 +42,7 @@
 
     console.log('<-------2------->');
     /*
-    +2. Внутри всех элементов на странице, которые имеют класс "card-link",
+    2. Внутри всех элементов на странице, которые имеют класс "card-link",
     поменяйте текст внутри элемента на "ссылка".
      */
     const selectCardLink = document.querySelectorAll('.card-link');
@@ -55,8 +55,7 @@
     3. Найти все элементы на странице с классом "card-link", которые лежат в
     элементе с классом "card-body" и вывести полученную коллекцию в консоль.
      */
-    const selectCardBody = document.querySelector('.card-body');
-    console.log(selectCardBody.querySelectorAll('.card-link'))
+    const selectCardBody = document.querySelector('.card-body .card-link');
 
     console.log('<-------4------->');
     /*
@@ -86,15 +85,14 @@
      */
     const newParagraph = document.createElement('p');
     newParagraph.innerText = 'Привет';
-    const ElCard = document.querySelector('.card');
-    ElCard.prepend(newParagraph);
+    const elCard = document.querySelector('.card');
+    elCard.prepend(newParagraph);
 
     console.log('<-------8------->');
     /*
     -8. Удалите тег h6 на странице.
      */
     const removeTeg = document.querySelector('h6');
-    console.log(removeTeg);
     removeTeg.remove();
 
   </script>

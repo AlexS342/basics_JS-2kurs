@@ -70,7 +70,7 @@
     */
     window.addEventListener(
       'load', () => {
-        console.log('страница загрузилась')
+        console.log('страница загрузилась');
       });
 
     /*
@@ -83,13 +83,11 @@
     Необходимо использовать делегирование.
     */
     document.addEventListener('click', event => {
-      let nalichieClassTag = null;
+      let hasClassTag = "отсутствует";
       if (event.target.classList.contains('super_element')) {
-        nalichieClassTag = "присутствует";
-      } else {
-        nalichieClassTag = "отсутствует";
+        hasClassTag = "присутствует";
       }
-      console.log(`Класс "super_element" ${nalichieClassTag} в элементе "${event.target.nodeName.toLowerCase()}".`);
+      console.log(`Класс "super_element" ${hasClassTag} в элементе "${event.target.nodeName.toLowerCase()}".`);
     });
 
     /*
@@ -111,7 +109,7 @@
      */
     const tagUl = document.querySelector('ul');
     tagUl.addEventListener('click', event => {
-      if ("BUTTON" === event.target.nodeName) {
+      if (event.target.nodeName === "BUTTON") {
         console.log(event.target.innerText);
       }
     });
@@ -124,14 +122,13 @@
     Предполагаю, что такой порядок вызван тем, что в задании №5 событие повешено 
     на тег, а в задании №3 событие повешено на document. Не знаю как правильно 
     объяснить, но понимаю это так,что сначало срабатывает событие на самом 
-    вложенном элементе и дальше по возростающей. И, возможно, это связано с 
-    глубиной prototype.
+    вложенном элементе и дальше по возростающей.
     */
 
     /*
     7. С помощью JS необходимо изменить цвет заднего фона каждого второго тега li.
      */
-    const tagLi = document.querySelectorAll('li:nth-child(odd)');
+    const tagLi = document.querySelectorAll('li:nth-child(even)');
     for (let i = 0; i < tagLi.length; i++) {
       tagLi[i].style.backgroundColor = "green";
     }

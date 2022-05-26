@@ -35,64 +35,66 @@
     "super-dropdown", необходимо использовать методы forEach и querySelectorAll 
     и свойство classList у элементов.
      */
-    const ElDrop = document.querySelectorAll('.dropdown-item');
-    ElDrop.forEach(element => element.classList.add("super-dropdown"));
+    const elDrop = document.querySelectorAll('.dropdown-item');
+    elDrop.forEach(element => element.classList.add("super-dropdown"));
 
     /*
     2. У элемента с классом btn необходимо убрать класс "btn-secondary", если он
     присутствует у этого элемента, либо добавить, если такого класса у элемента
     не было.
      */
-    const ElBtn = document.querySelector('.btn');
-    ElBtn.classList.toggle("btn-secondary");
+    const elBtn = document.querySelector('.btn');
+    elBtn.classList.toggle("btn-secondary");
 
     /*
     3. Необходимо удалить класс "dropdown-menu" у элемента, у которого
     присутствует класс "menu".
      */
-    const ElMenu = document.querySelector(".menu");
-    ElMenu.classList.remove("dropdown-menu")
+    const elMenu = document.querySelector(".menu");
+    elMenu.classList.remove("dropdown-menu")
 
     /*
     4. Используя метод insertAdjacentHTML добавьте после div'a с классом
     "dropdown" следующую разметку:
       <a href="#">link</a>
      */
-    const Eldropdown = document.querySelector('div.dropdown');
-    Eldropdown.insertAdjacentHTML("afterend", '<a href="#">link</a>');
+    const eldropdown = document.querySelector('div.dropdown');
+    eldropdown.insertAdjacentHTML("afterend", '<a href="#">link</a>');
 
     /*
-    -5. У элемента с id "dropdownMenuButton" замените id на "superDropdown".
+    5. У элемента с id "dropdownMenuButton" замените id на "superDropdown".
      */
-    const ElDMB = document.querySelector('#dropdownMenuButton');
-    ElDMB.id = "superDropdown";
+    const elDMB = document.querySelector('#dropdownMenuButton');
+    elDMB.id = "superDropdown";
 
     /*
-    -6. Добавьте атрибут data-dd со значением 3 элементу у которого существует
+    6. Добавьте атрибут data-dd со значением 3 элементу у которого существует
     атрибут "aria-labelledby" равный "dropdownMenuButton" используя dataset.
      */
-    const ElData_dd = document.querySelector('[aria-labelledby]');
-    ElData_dd.setAttribute('data-dd', 3);
+    const elData_dd = document
+      .querySelector('[aria-labelledby="dropdownMenuButton"]');
+    //elData_dd.setAttribute('data-dd', 3);
+    elData_dd.dataset.dd = "3";
 
 
     /*
-    -7. Удалите атрибут type у элемента с классом "dropdown-toggle".
+    7. Удалите атрибут type у элемента с классом "dropdown-toggle".
      */
-    const ElDropdown = document.querySelector('.dropdown-toggle');
-    ElDropdown.removeAttribute("type");
+    const elDropdown = document.querySelector('.dropdown-toggle');
+    elDropdown.removeAttribute("type");
 
     /*
-    -8. Выведите в консоль все имеющиеся атрибуты и их значения тега у которого
+    8. Выведите в консоль все имеющиеся атрибуты и их значения тега у которого
     есть все два класса btn и dropdown-toggle.
     Вывод каждого атрибута и значений должен выглядеть следующим образом (пример):
     Атрибут "class" содержит значение "btn btn-secondary dropdown-toggle"
      */
-    const ElBtnDrop = document.querySelector('.btn.dropdown-toggle');
-    const ElDataset = ElBtnDrop.attributes;
-    for (let i = 0; i < ElDataset.length; i++) {
-      const Name = ElDataset[i].nodeName;
-      const Value = ElDataset[i].nodeValue;
-      console.log(`Атрибут ${Name} содержит значение ${Value}`);
+    const elBtnDrop = document.querySelector('.btn.dropdown-toggle');
+    const elDataset = elBtnDrop.attributes;
+    for (let i = 0; i < elDataset.length; i++) {
+      const name = elDataset[i].nodeName;
+      const value = elDataset[i].nodeValue;
+      console.log(`Атрибут ${name} содержит значение ${value}`);
     }
 
   </script>
