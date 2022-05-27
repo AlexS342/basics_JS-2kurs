@@ -62,6 +62,21 @@
       X6: "Знаю, программирование это нелегко.",
       H99: "Однако, программирование, в итоге, принесет свои плоды.",
     };
+    //-----------------------------------
+    const listEl = document.body.querySelector('.nav-tabs');
+    const liAll = document.body.querySelectorAll('.nav-link');
+    const divInput = document.body.querySelector('.text');
+
+    listEl.addEventListener('click', event => {
+      if (event.target.classList.contains('nav-link')) {
+        for (let i = 0; i < liAll.length; i++) {
+          liAll[i].classList.remove('active');
+        }
+        event.target.classList.add('active');
+        let dataAttribute = event.target.parentNode.getAttribute('data-text');
+        divInput.innerText = panelText[dataAttribute];
+      }
+    });
 
 
     /*
@@ -70,7 +85,11 @@
     шрифт у текста, никакого резкого увеличения шрифта не должно быть при
     перетаскивании ползунка.
      */
-
+    const divInputEl = document.body.querySelector('#inputDiv');
+    const inputRangeEl = document.body.querySelector('input[type="range"]');
+    inputRangeEl.addEventListener('input', (event) => {
+      divInputEl.style.fontSize = event.target.value + "px";
+    });
 
   </script>
 </body>
