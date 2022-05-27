@@ -57,20 +57,13 @@
     3. При клике на кнопку "В корзину" название кнопки должно поменяться на
     "Добавлено" и кнопка должна стать неактивной.
      */
-    /*
-    const buttonAll = document.querySelectorAll('button');
-    buttonAll.forEach(element => element.addEventListener('click', () => {
-      element.innerText = 'Добавлено';
-      element.disabled = 'true';
-    }));
-    */
     document.body.addEventListener('click', event => {
       const eTarget = event.target;
       if (eTarget.tagName !== "BUTTON") {
         return;
       }
       eTarget.innerText = 'Добавлено';
-      eTarget.disabled = 'true';
+      eTarget.disabled = true;
     });
 
     /*
@@ -87,7 +80,6 @@
     tagProductClone.querySelector('.productName').innerText = 'Товар 4';
     document.querySelector('.product:last-of-type')
       .replaceWith(tagProductClone);
-    //Непонятно, почему :last-of-type, а не :last-child
 
     /*
     5. По истечении 2 секунд с момента открытия страницы первый товар должен быть

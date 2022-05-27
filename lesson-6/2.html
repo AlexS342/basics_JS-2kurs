@@ -69,9 +69,11 @@
     также должен меняться.
     */
     const textInInput = document.querySelector('#from');
-    textInInput.oninput = function () {
-      document.querySelector('span').innerText = textInInput.value;
-    };
+    const spanEl = document.querySelector('span');
+    textInInput.addEventListener('input', () => {
+      spanEl.innerText = textInInput.value;
+    });
+
 
 
 
@@ -82,8 +84,8 @@
     2) поставить данному элементу стиль visibility в значение 'visible'.
      */
     const buttonMessageBtn = document.body.querySelector('.messageBtn');
+    const elMassage = document.querySelector('.message');
     buttonMessageBtn.addEventListener('click', () => {
-      const elMassage = document.querySelector('.message');
       elMassage.classList.add('animate__animated', 'animate__fadeInLeftBig');
       elMassage.style.visibility = 'visible';
     });
@@ -109,7 +111,7 @@
           event.preventDefault();
           allInput[i].classList.add('error');
         }
-      };
+      }
     });
 
     elForm.addEventListener('input', event => {
@@ -122,21 +124,6 @@
         event.target.classList.remove('error');
       }
     });
-
-    /*
-    Почему такой подход не работает?
-    for (let i = 0; i < allInput.length; i++) {
-      allInput[i].addEventListener.oninput = () => {
-        if (allInput[i].value === '') {
-          console.log('Пусто');
-          //allInput[i].classList.add('error');
-        } else {
-          console.log(allInput[i].value);
-          //allInput[i].classList.remove('error');
-        }
-      }
-    }
-    */
 
   </script>
 </body>

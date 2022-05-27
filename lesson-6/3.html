@@ -49,7 +49,7 @@
           do {
             blockStarItem.classList.add('golden');
             blockStarItem = blockStarItem.previousElementSibling;
-          } while (blockStarItem)
+          } while (blockStarItem);
         }
       });
 
@@ -65,13 +65,10 @@
           let blockStarItem = event.target;
           do {
             blockStarItem.classList.remove('golden');
-            blockStarItem = blockStarItem.nextElementSibling;
-          } while (blockStarItem)
+            blockStarItem = blockStarItem.previousElementSibling;
+          } while (blockStarItem);
         }
       });
-    //В чем разница mouseout и onmouseout?
-    //Для чего используют приставку "on" у событий.?
-
 
     /*
     3. Когда мы переводим мышь от одной звезды к другой, у нас могут мигать
