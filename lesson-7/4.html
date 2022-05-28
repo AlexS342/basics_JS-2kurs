@@ -16,16 +16,22 @@
     "use strict";
 
     /**
-     * Returns the rectangle object with width and height parameters and
+     * Returns the rectangle object with width and height parameters and getArea() method
      * getArea() method.
      *
      * @param {number} width - Rectangle width
      * @param {number} height - Rectangle height
      * @return {Rectangle}
      */
-    function Rectangle() {
+    //Возвращает объект rectangle с параметрами width и height и методом getArea(). Ширина, Высота, получитьПлощадь()
+    function Rectangle(width, height) {
+      this.width = width;
+      this.height = height;
+    };
 
-    }
+    Rectangle.prototype.getArea = function () {
+      return this.width * this.height;
+    };
 
     const r = new Rectangle(10, 20);
     console.log(r.width); // 10
