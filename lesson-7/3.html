@@ -23,12 +23,26 @@
      * Функция перемещает цифры получая наибольшее число.
      * @param {number} n - Число, из цифр которого нужно составить наибольшее
      * возможное число с теми же цифрами.
-     * @returns {number} - Набольшее число из набора цифр числа, переданного в
+     * @returns {number} outValue - Набольшее число из набора цифр числа, переданного в
      * параметр "n"
      */
     function descendingOrder(n) {
-
-    }
+      const inValue = String(n);
+      let outValue;
+      if (n < 10) { return outValue = n; }
+      for (let y = 9; y >= 0; y--) {
+        for (let i = 0; i < inValue.length; i++) {
+          if (inValue[i] == y) {
+            if (!outValue) {
+              outValue = inValue[i];
+            } else {
+              outValue = outValue + inValue[i];
+            }
+          }
+        }
+      }
+      return +outValue;
+    };
 
     console.log(descendingOrder(42145)); // 54421
     console.log(descendingOrder(145263)); // 654321
