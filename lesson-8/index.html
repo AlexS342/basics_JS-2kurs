@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+        integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+        crossorigin="anonymous" />
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -23,8 +25,22 @@
 
                 <span class="cartIconWrap">
                     <img class="cartIcon" src="images/cart.png" alt="">
-                    <span>5</span>
+                    <span>0</span>
                 </span>
+
+                <div class="basket hidden">
+                    <div class="basketRow basketHeader">
+                        <div>Название товара</div>
+                        <div>Количество</div>
+                        <div>Цена за шт.</div>
+                        <div>Итого</div>
+                    </div>
+
+                    <div class="basketTotal">
+                        Товаров в корзине на сумму:
+                        $<span class="basketTotalValue">0</span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -137,18 +153,16 @@
 
         <div class="featuredItems">
 
-            <div class="featuredItem">
-
+            <div class="featuredItem" data-id="1" data-name="ELLERY X M'O CAPSULE" data-price="52">
                 <div class="featuredImgWrap">
                     <img src="images/featured/1.jpg" alt="">
                     <div class="featuredImgDark">
-                        <button>
+                        <button class="addToCart">
                             <img src="images/cart.svg" alt="">
                             Add to Cart
                         </button>
                     </div>
                 </div>
-
                 <div class="featuredData">
                     <div class="featuredName">
                         ELLERY X M'O CAPSULE
@@ -162,21 +176,18 @@
                         $52.00
                     </div>
                 </div>
-
             </div>
 
-            <div class="featuredItem">
-
+            <div class="featuredItem" data-id="2" data-name="ELLERY CAPSULE" data-price="40">
                 <div class="featuredImgWrap">
                     <img src="images/featured/2.jpg" alt="">
                     <div class="featuredImgDark">
-                        <button>
+                        <button class="addToCart">
                             <img src="images/cart.svg" alt="">
                             Add to Cart
                         </button>
                     </div>
                 </div>
-
                 <div class="featuredData">
                     <div class="featuredName">
                         ELLERY X M'O CAPSULE
@@ -187,24 +198,21 @@
                         up with Moda Operandi.
                     </div>
                     <div class="featuredPrice">
-                        $52.00
+                        $40.00
                     </div>
                 </div>
-
             </div>
 
-            <div class="featuredItem">
-
+            <div class="featuredItem" data-id="3" data-name="X M'O CAPSULE" data-price="57">
                 <div class="featuredImgWrap">
                     <img src="images/featured/3.jpg" alt="">
                     <div class="featuredImgDark">
-                        <button>
+                        <button class="addToCart">
                             <img src="images/cart.svg" alt="">
                             Add to Cart
                         </button>
                     </div>
                 </div>
-
                 <div class="featuredData">
                     <div class="featuredName">
                         ELLERY X M'O CAPSULE
@@ -215,24 +223,21 @@
                         up with Moda Operandi.
                     </div>
                     <div class="featuredPrice">
-                        $52.00
+                        $57.00
                     </div>
                 </div>
-
             </div>
 
-            <div class="featuredItem">
-
+            <div class="featuredItem" data-id="4" data-name="ELL X M'O CAP" data-price="42">
                 <div class="featuredImgWrap">
                     <img src="images/featured/4.jpg" alt="">
                     <div class="featuredImgDark">
-                        <button>
+                        <button class="addToCart">
                             <img src="images/cart.svg" alt="">
                             Add to Cart
                         </button>
                     </div>
                 </div>
-
                 <div class="featuredData">
                     <div class="featuredName">
                         ELLERY X M'O CAPSULE
@@ -243,24 +248,21 @@
                         up with Moda Operandi.
                     </div>
                     <div class="featuredPrice">
-                        $52.00
+                        $42.00
                     </div>
                 </div>
-
             </div>
 
-            <div class="featuredItem">
-
+            <div class="featuredItem" data-id="5" data-name="LERY X M'O" data-price="76">
                 <div class="featuredImgWrap">
                     <img src="images/featured/5.jpg" alt="">
                     <div class="featuredImgDark">
-                        <button>
+                        <button class="addToCart">
                             <img src="images/cart.svg" alt="">
                             Add to Cart
                         </button>
                     </div>
                 </div>
-
                 <div class="featuredData">
                     <div class="featuredName">
                         ELLERY X M'O CAPSULE
@@ -271,23 +273,21 @@
                         up with Moda Operandi.
                     </div>
                     <div class="featuredPrice">
-                        $52.00
+                        $76.00
                     </div>
                 </div>
-
             </div>
-            <div class="featuredItem">
 
+            <div class="featuredItem" data-id="6" data-name="ELRY O SULE" data-price="39">
                 <div class="featuredImgWrap">
                     <img src="images/featured/6.jpg" alt="">
                     <div class="featuredImgDark">
-                        <button>
+                        <button class="addToCart">
                             <img src="images/cart.svg" alt="">
                             Add to Cart
                         </button>
                     </div>
                 </div>
-
                 <div class="featuredData">
                     <div class="featuredName">
                         ELLERY X M'O CAPSULE
@@ -298,10 +298,9 @@
                         up with Moda Operandi.
                     </div>
                     <div class="featuredPrice">
-                        $52.00
+                        $39.00
                     </div>
                 </div>
-
             </div>
         </div>
 
@@ -399,12 +398,13 @@
                 </a>
             </div>
             <div class="footerRight">
-                &copy; 2021  Brand  All Rights Reserved.
+                &copy; 2021 Brand All Rights Reserved.
             </div>
         </div>
     </div>
 
     <script src="app.js"></script>
+    <script src="basket.js"></script>
 </body>
 
 </html>
